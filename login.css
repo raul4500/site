@@ -6,7 +6,7 @@ body{
 
 img{
     position: absolute;
-    width: fit-content;
+    width: auto;
     height: 100%;
     float: right;
     right: 0%;
