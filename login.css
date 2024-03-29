@@ -16,7 +16,7 @@ img{
     float: left;
     height: 483px;
     background-color: rgb(40, 0, 116);
-    width: 800px;
+    width: 59%;
     padding-top: 150px;
     position: relative;
     border-bottom-right-radius: 50px;
@@ -28,7 +28,7 @@ img{
     float: left;
     height: 483px;
     background-color: rgb(109, 0, 172);
-    width: 800px;
+    width: 59%;
     padding-top: 150px;
     position: relative;
     border-bottom-right-radius: 50px;
@@ -83,7 +83,11 @@ input{
 p{
     font-family: Arial, Helvetica, sans-serif;
     color: aliceblue;
-    margin-left: 275px;
+    display: block;
+    margin: 10px auto;
+    width: 240px;
+    height: 30px;
+    padding: 10px;
     animation: fadeIn 1.5s ease forwards;
     opacity: 0;
 }
@@ -102,9 +106,10 @@ p{
 button{
     font-family: Arial, Helvetica, sans-serif;
     display: block;
-    margin-left: 275px;
-    width: 100px;
+    margin: 10px auto;
+    width: 240px;
     height: 30px;
+    padding: 0px 10px;
     border-radius: 10px;
     border-style: none;
     color: aliceblue;
