@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #login, #signup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f2f2f2;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      
+      #login-content, #signup-content {
+        display: none;
+      }
+      
+      #login-btn, #signup-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+      
+      #switch-btn {
+        background-color: #333;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+        margin-top: 10px;
+      }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <button id="login-btn">Login</button>
+        <div id="login-content">
+          <!-- Add your login form here -->
+          <button id="switch-btn">Switch to Sign Up</button>
+        </div>
+      </div>
+      
+      <div id="signup" style="display:none;">
+        <button id="signup-btn">Sign Up</button>
+        <div id="signup-content">
+          <!-- Add your sign-up form here -->
+          <button id="switch-btn">Switch to Login</button>
+        </div>
+      </div>
+
+  <script>
+    document.getElementById('login-btn').addEventListener('click', function() {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('signup').style.display = 'block';
+    });
+    
+    document.getElementById('signup-btn').addEventListener('click', function() {
+      document.getElementById('login').style.display = 'block';
+      document.getElementById('signup').style.display = 'none';
+    });
+    
+    document.getElementById('switch-btn').addEventListener('click', function() {
+      document.getElementById('login-content').style.display = 'none';
+      document.getElementById('signup-content').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
