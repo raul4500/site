@@ -1,0 +1,61 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+  
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.imagem{
+    position: absolute;
+}
+
+.imagem img{
+    width: 100vw;
+    height: 100vh;
+}
+
+nav{
+    position: fixed;
+    width: 100vw;
+    background-color: aliceblue;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav div{
+    display: flex;
+    padding: 1em;
+    gap: 10em;
+}
+
+nav div a{
+    background-color: aqua;
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-family: "Neue Montreal";
+}
+
+.header{
+    margin: 200px 100px;
+    background-color: antiquewhite;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+.header .h1{
+    position: relative;
+    font-family: "Monoton";
+    font-size: 8vw;
+    line-height: 1.125;
+}

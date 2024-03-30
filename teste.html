@@ -1,79 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-      #login, #signup {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #f2f2f2;
-        padding: 20px;
-        border: 1px solid #ccc;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      }
-      
-      #login-content, #signup-content {
-        display: none;
-      }
-      
-      #login-btn, #signup-btn {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        opacity: 0.9;
-      }
-      
-      #switch-btn {
-        background-color: #333;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        opacity: 0.9;
-        margin-top: 10px;
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>load</title>
+  <style>
+    *{
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+  }
+    
+  
+  html, body{
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+  }
+
+#overlay{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+}
+
+#bar{
+  width: 100vw;
+  height: 100vh;
+  background: #1a1a1a;
+}
+
+#counter{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 1000;
+  color: aliceblue;
+  font-size: 900%;
+  padding: 0.2em 0.4em;
+  font-family: "Monoton";
+}
+</style>
 </head>
 <body>
-    <div id="login">
-        <button id="login-btn">Login</button>
-        <div id="login-content">
-          <!-- Add your login form here -->
-          <button id="switch-btn">Switch to Sign Up</button>
-        </div>
-      </div>
-      
-      <div id="signup" style="display:none;">
-        <button id="signup-btn">Sign Up</button>
-        <div id="signup-content">
-          <!-- Add your sign-up form here -->
-          <button id="switch-btn">Switch to Login</button>
-        </div>
-      </div>
+  <h1 id="counter">0</h1>
+    <div id="overlay">
+        <div id="bar"></div>
+        <div id="bar"></div>
+        <div id="bar"></div>
+        <div id="bar"></div>
+        <div id="bar"></div>
+        <div id="bar"></div>
+        <div id="bar"></div>
+        <div id="bar"></div>
+        <div id="bar"></div>
+        <div id="bar"></div>
+    </div>
 
-  <script>
-    document.getElementById('login-btn').addEventListener('click', function() {
-      document.getElementById('login').style.display = 'none';
-      document.getElementById('signup').style.display = 'block';
+    <script>    
+    function startLoader() {
+        let counterElement = document.querySelector("#counter");
+        let currentValue = 0;
+    
+        function updateCounter() {
+            if(currentValue === 100){
+                return true;
+            }
+    
+            currentValue += Math.floor(Math.random() * 10) + 1;
+    
+            if(currentValue > 100){
+                currentValue = 100;
+            }
+    
+            counterElement.textContent = currentValue;
+    
+            let delay = Math.floor(Math.random()*200) + 50;
+            setTimeout(updateCounter, delay);
+        }
+    
+        updateCounter();
+    }
+    
+    startLoader();
+    
+    gsap.to("#counter", 0.25,{
+        delay: 3.5,
+        opacity: 0,
     });
     
-    document.getElementById('signup-btn').addEventListener('click', function() {
-      document.getElementById('login').style.display = 'block';
-      document.getElementById('signup').style.display = 'none';
+    gsap.to("#bar", 1.5, {
+        delay: 3.5,
+        height: 0,
+        stagger: {
+            amount: 0.5
+        },
+        ease: "power4.inOut",
     });
-    
-    document.getElementById('switch-btn').addEventListener('click', function() {
-      document.getElementById('login-content').style.display = 'none';
-      document.getElementById('signup-content').style.display = 'block';
-    });
-  </script>
+    location.href="home.html"
+    </script>
 </body>
 </html>

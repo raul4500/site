@@ -15,12 +15,19 @@ html, body{
     position: absolute;
 }
 
+.imagem img{
+    width: 100vw;
+    height: 100vh;
+}
+
 nav{
+    position: fixed;
+    width: 100vw;
+    background-color: aliceblue;
     position: fixed;
     top: 0;
     display: flex;
     justify-content: space-between;
-    padding: 1em;
 }
 
 nav div{
@@ -30,6 +37,7 @@ nav div{
 }
 
 nav div a{
+    background-color: aqua;
     position: relative;
     text-decoration: none;
     color: black;
@@ -37,8 +45,9 @@ nav div a{
 }
 
 .header{
+    margin: 200px 100px;
     background-color: antiquewhite;
-    width: 30%;
+    width: fit-content;
     display: flex;
     justify-content: space-between;
     padding: 2em;
@@ -47,8 +56,7 @@ nav div a{
 .header .h1{
     position: relative;
     font-family: "Monoton";
-    font-size: 100px;
-    color: #ffffff;
+    font-size: 8vw;
     line-height: 1.125;
 }
 

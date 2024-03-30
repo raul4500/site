@@ -4,6 +4,7 @@ function startLoader() {
 
     function updateCounter() {
         if(currentValue === 100){
+            location.href="home1.html";
             return;
         }
 
@@ -20,6 +21,8 @@ function startLoader() {
     }
 
     updateCounter();
+
+
 }
 
 startLoader();
@@ -46,3 +49,4 @@ gsap.from(".h1", 1.5, {
     },
     ease: "power4.inOut",
 });
+
