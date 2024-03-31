@@ -21,6 +21,14 @@ body{
     height: fit-content;
 }
 
+.cor{
+    background: linear-gradient(90deg, rgba(0, 2, 124, 0.5), rgba(148, 81, 255, 0.5));
+    width: 100vw;
+    margin-top: -10px;
+    height: 800px;
+    position: fixed;
+}
+
 nav{
     margin-top: 10px;
     position: relative;
@@ -51,6 +59,17 @@ nav div input{
     font-size: 1.5em;
 }
 
+nav div i{
+    color: rgb(140, 0, 255);
+    text-decoration: none;
+    border-radius: 20px;
+    height: 1.5em;
+    border: none;
+    width: 100%;
+    padding: 0 10px 0 10px;
+    font-size: 1.5em;
+}
+
 nav div a{
     font-size: 1.5em;
     text-decoration: none;
@@ -59,12 +78,12 @@ nav div a{
 }
 
 .header{
+    position: absolute;
     margin: 200px 30px;
-    background-color: antiquewhite;
     width: fit-content;
     display: flex;
     justify-content: space-between;
-    padding: 2em;
+    padding: 2em 4em;
 }
 
 .header .h1{
@@ -77,12 +96,12 @@ nav div a{
 
 
 .corpo{
-    position: relative;
+    position: absolute;
     background-color: white;
     width: 100%;
     height: 2000px;
     text-align: center;
-    margin: 0px auto;
+    margin: 600px auto;
 }
 
 .bloco{
@@ -93,12 +112,10 @@ nav div a{
 }
 
 .bloco1{
-    margin: -200px auto;
+    margin: -250px auto;
     background-color: rgb(255, 255, 255);
     width: 90%;
     height: 300px;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.288);
-    border: 2px solid;
-    border-color: black;
     border-radius: 20px;
 }

@@ -50,3 +50,21 @@ gsap.from(".h1", 1.5, {
     ease: "power4.inOut",
 });
 
+gsap.from("nav", 1.5, {
+    delay: 0.9,
+    y: 700,
+    stagger: {
+        amount: 0.5,
+    },
+    ease: "power4.inOut",
+});
+
+gsap.from(".corpo", 1.5, {
+    delay: 0.8,
+    y: 700,
+    stagger: {
+        amount: 0.5,
+    },
+    ease: "power4.inOut",
+});
+
