@@ -15,7 +15,7 @@ img{
 #sla{
     float: left;
     height: 483px;
-    background-color: rgb(40, 0, 116);
+    background: linear-gradient(60deg, rgb(76, 0, 255),rgb(140, 0, 255) 50%, rgb(204, 0, 255));
     width: 59%;
     padding-top: 150px;
     position: relative;
@@ -27,7 +27,7 @@ img{
 #sla1{
     float: left;
     height: 483px;
-    background-color: rgb(109, 0, 172);
+    background: linear-gradient(45deg, rgb(122, 43, 250), rgb(0, 26, 255), rgb(0, 174, 255));
     width: 59%;
     padding-top: 150px;
     position: relative;
