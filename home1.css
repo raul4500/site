@@ -18,11 +18,11 @@ body{
 .imagem img{
     zoom: 1;
     width: 900px;
-    height: fit-content;
+    height: 100%;
 }
 
 .cor{
-    background: linear-gradient(90deg, rgba(0, 2, 124, 0.5), rgba(148, 81, 255, 0.5));
+    background: linear-gradient(90deg, rgba(0, 2, 102, 0.5), rgba(142, 3, 255, 0.5));
     width: 100vw;
     margin-top: -10px;
     height: 800px;
@@ -30,17 +30,17 @@ body{
 }
 
 nav{
-    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.575);
     position: relative;
-    width: 100%;
-    top: 0;
-    text-align: center;
+    width: fit-content;
+    padding-top: 15px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
     display: flex;
     justify-content: center;
 }
 
 nav div{
-    background-color: rgb(54, 54, 54);
     border-radius: 50px;
     text-align: center;
     display: flex;
@@ -52,26 +52,34 @@ nav div{
 nav div input{
     text-decoration: none;
     border-radius: 20px;
-    height: 1.5em;
+    height: 1.8em;
     border: none;
     width: 100%;
     padding: 0 10px 0 10px;
     font-size: 1.5em;
+}
+
+nav div button{
+    width: 4em;
+    color: aliceblue;
+    border-radius: 20px;
+    border: 0px;
+    margin: 0px 10px;
+    background-color: rgb(168, 0, 78);
 }
 
 nav div i{
     color: rgb(140, 0, 255);
     text-decoration: none;
-    border-radius: 20px;
-    height: 1.5em;
-    border: none;
     width: 100%;
-    padding: 0 10px 0 10px;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 nav div a{
-    font-size: 1.5em;
+    border-radius: 20px;
+    background-color: rgba(47, 46, 58, 0);
+    padding: 5px 10px 0px 10px;
+    font-size: 2em;
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-family: "Neue Montreal";
@@ -104,14 +112,14 @@ nav div a{
     margin: 600px auto;
 }
 
-.bloco{
+.suporte{
     margin: 10px;
     margin-top: 10px;
     width: 90%;
     height: 100px;
 }
 
-.bloco1{
+#bloco1{
     margin: -250px auto;
     background-color: rgb(255, 255, 255);
     width: 90%;
