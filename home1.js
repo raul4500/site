@@ -10,8 +10,16 @@ document.getElementById('botaologin').style.display = 'none';
     document.getElementById('sair').style.display = 'none';
 }
 
-document.getElementById('sair').addEventListener('click', function(){
+document.getElementById('logout').addEventListener('click', function(){
     localStorage.setItem('usuario', "");
     localStorage.setItem('senha', "");
     location.reload()
+});
+
+document.getElementById('iconperfil').addEventListener('click', function(){
+    if(document.getElementById('profile').style.display == 'none'){
+        document.getElementById('profile').style.display = 'block';
+    }else{
+        document.getElementById('profile').style.display = 'none';
+    }
 });
