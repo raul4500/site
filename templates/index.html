@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência de Viagens - Viagens Disponíveis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+    header a{
+        text-decoration: none;
+        background-color:rgb(0, 74, 154);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.viagens-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.viagem {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.viagem h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.viagem p {
+    margin: 5px 0;
+    color: #333;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.admin-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .viagens-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .viagens-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Viagens RMR</h1>
+        {% if usuario == 'admin' %}
+        <h1><a href="/clientes">Clientes</a></h1>
+        <h1><a href="/cadastrar/2">Cadastrar Viagem</a></h1>
+        <h1><a href="/logout">Logout</a></h1>
+        {% elif usuario == None %}
+        <h1><a href="/login">Login</a></h1>
+        {% else %}
+        <h1><a href="/logout">Logout</a></h1>
+        {% endif %}
+
+    </header>
+
+    <div class="container">
+        <div class="viagens-grid">
+            {% for viagem in viagens %}
+            <div class="viagem">
+                <h3>Destino: {{ viagem.destino }}</h3>
+                <p>Preço: R$ {{ viagem.preco }}</p>
+                <p>Data de Partida: {{ viagem.data_inicio }}</p>
+                <form action="/reserva/{{ viagem.id }}" method="get">
+                    <button class="reserva" type="submit">Reservar Agora</button>
+                </form>
+                {% if usuario == 'admin' %}
+                <div class="admin-actions">
+                    <button><a href="/editar/viagem/{{ viagem.id }}">Editar</a></button>
+                    <button><a href="/deletar/viagem/{{ viagem.id }}">Deletar</a></button>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+</body>
+</html>
